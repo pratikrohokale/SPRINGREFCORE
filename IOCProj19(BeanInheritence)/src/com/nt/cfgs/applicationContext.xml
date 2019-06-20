@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <!--  Problem (No Reusability for Property values cfg )
+    <bean id="pulsor1"  class="com.nt.beans.Bike">
+   <property name="id" value="1001"/>
+   <property name="make" value="bajaj"/>
+   <property name="color" value="red"/>
+    <property name="engineCC" value="150cc"/>
+    <property name="engineNo" value="123AB"/>
+    <property name="gearsCount" value="6"/>
+ </bean>
+
+<bean id="pulsor2"  class="com.nt.beans.Bike">
+   <property name="id" value="1002"/>
+   <property name="make" value="bajaj"/>
+   <property name="color" value="red"/>
+    <property name="engineCC" value="150cc"/>
+    <property name="engineNo" value="134AB"/>
+    <property name="gearsCount" value="6"/>
+ </bean>
+
+<bean id="pulsor3"  class="com.nt.beans.Bike">
+   <property name="id" value="1003"/>
+   <property name="make" value="bajaj"/>
+   <property name="color" value="red"/>
+    <property name="engineCC" value="150cc"/>
+    <property name="engineNo" value="133AB"/>
+    <property name="gearsCount" value="6"/>
+ </bean>
+ -->      
+ 
+ <!--  Solution1 :Beaninheritence for reusability of properties cfg  
+ <bean id="pulsor1"  class="com.nt.beans.Bike">
+   <property name="id" value="1001"/>
+   <property name="make" value="bajaj"/>
+   <property name="color" value="red"/>
+    <property name="engineCC" value="150cc"/>
+    <property name="engineNo" value="123AB"/>
+    <property name="gearsCount" value="6"/>
+ </bean>
+
+<bean id="pulsor2"  class="com.nt.beans.Bike"  parent="pulsor1">
+   <property name="id" value="1002"/>
+    <property name="engineNo" value="134AB"/>
+ </bean>
+
+<bean id="pulsor3"  class="com.nt.beans.Bike" parent="pulsor1">
+   <property name="id" value="1003"/>
+    <property name="engineNo" value="133AB"/>
+ </bean>
+ --> 
+ 
+ <bean id="basePulsor"  class="com.nt.beans.Bike"  abstract="true">
+   <property name="make" value="bajaj"/>
+   <property name="color" value="red"/>
+    <property name="engineCC" value="150cc"/>
+    <property name="gearsCount" value="6"/>
+ </bean>
+
+<bean id="pulsor1"  class="com.nt.beans.Bike"  parent="basePulsor">
+   <property name="id" value="1001"/>
+    <property name="engineNo" value="123AB"/>
+ </bean>
+
+
+<bean id="pulsor2"  class="com.nt.beans.Bike"  parent="basePulsor">
+   <property name="id" value="1002"/>
+    <property name="engineNo" value="134AB"/>
+ </bean>
+
+<bean id="pulsor3"  class="com.nt.beans.Bike" parent="basePulsor">
+   <property name="id" value="1003"/>
+    <property name="engineNo" value="133AB"/>
+ </bean>
+
+</beans>

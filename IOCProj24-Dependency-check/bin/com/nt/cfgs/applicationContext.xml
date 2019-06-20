@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+<!-- Dependent classes -->
+  <bean id="pEngine"  class="com.nt.strategy.PetrolEngine"/>
+  <bean id="dEngine"  class="com.nt.strategy.DiselEngine"/>
+  <bean id="cEngine"  class="com.nt.strategy.CNGEngine"/>
+  <!-- Target class -->
+  <bean id="viechle"  class="com.nt.strategy.Viechle"  dependency-check="none">
+        <property name="engg"  ref="dEngine"/> 
+       <property name="viechleId"  value="1001"/>
+       <!-- <property name="owner"  value="raja"/> -->
+  </bean>
+  
+
+
+</beans>

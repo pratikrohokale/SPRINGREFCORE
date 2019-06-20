@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="ec1stYearEnggCourse"  name="1stEC,ECFirst" class="com.nt.beans.EngineeringCourse">
+      <property name="subjects">
+          <list>
+            <value>C</value>
+            <value>M1</value>
+            <value>DE</value>
+            <value>EDC</value>
+          </list>
+      </property>
+ </bean>
+ 
+ <alias name="ec1stYearEnggCourse"   alias="ec1"/>
+ <alias name="ec1stYearEnggCourse"   alias="ecfy"/>
+
+</beans>

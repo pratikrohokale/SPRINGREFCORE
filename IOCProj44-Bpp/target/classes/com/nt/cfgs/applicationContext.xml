@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+  <bean id="seDAO"  class="com.nt.dao.StudentEmployeeDAO"  scope="singleton"/>
+  <bean id="stBO"  class="com.nt.bo.StudentBO"  scope="prototype"/>
+  <bean id="empBO"  class="com.nt.bo.EmployeeBO"  scope="prototype"/>
+  
+  <bean id="seService"  class="com.nt.service.StudentEmployeeService" scope="singleton">
+      <property name="dao"  ref="seDAO"/>
+      <lookup-method name="getStudentBO" bean="stBO"/>
+      <lookup-method name="getEmployeeBO" bean="empBO"/>
+  </bean>
+  
+   <!-- Bean PostProcessor -->
+  <!--   <bean id="bpp"  class="com.nt.bpp.DOJPostProccessor"/> -->
+</beans>

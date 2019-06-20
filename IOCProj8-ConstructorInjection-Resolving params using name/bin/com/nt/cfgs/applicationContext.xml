@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ <bean id="st"   class="com.nt.beans.Student">
+     <constructor-arg name="sname"  value="raja"/>
+         <constructor-arg name="sno1"  value="101"/>
+          <constructor-arg  name="avg" value="56.78"/>
+   </bean>
+</beans>

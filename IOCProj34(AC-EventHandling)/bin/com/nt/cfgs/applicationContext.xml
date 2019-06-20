@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <!-- Gives DataSource obj -->
+ <bean id="drds"  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName"  value="oracle.jdbc.driver.OracleDriver"/>
+    <property name="url"  value="jdbc:oracle:thin:@localhost:1521:xe"/>
+    <property name="username" value="system"/>
+    <property name="password" value="manager"/> 
+ <!--    <property name="connectionProperties">
+       <props>
+           <prop key="user">system</prop>
+           <prop key="password">manager</prop>
+       </props>
+    </property> -->
+ </bean>
+ <bean id="scds"   class="org.springframework.jdbc.datasource.SingleConnectionDataSource"  parent="drds"/>
+ 
+ 
+<!-- Cfg DAO class -->
+  <bean id="stDAO"   class="com.nt.dao.StudentDAOImpl">
+     <property name="ds"   ref="scds"/>
+  </bean>
+  
+  <!-- Cfg Service class -->
+  <bean id="stService"  class="com.nt.service.StudentServiceImpl">
+     <property name="dao"  ref="stDAO"/>
+  </bean>
+  <!-- Cdg Controller class -->
+  <bean id="stController"  class="com.nt.controller.StudentController">
+    <property name="service"  ref="stService"/>
+  </bean>
+ 
+  <bean  class="com.nt.listener.IOCContainerMonitoringListener"/>
+
+</beans>

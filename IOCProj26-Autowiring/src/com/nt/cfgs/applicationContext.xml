@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byType" xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <bean id="tp"  class="com.nt.beans.Tourplan" primary="true">
+     <property name="places">  <!-- Explicit wiring -->
+       <list>
+          <value>Mahabhaleswar</value>
+          <value>ooty</value>
+          <value>munnarhills</value>
+       </list>
+     </property>
+   </bean>
+   
+    <bean id="tp2"  class="com.nt.beans.Tourplan">
+     <property name="places">  
+       <list>
+          <value>Goa</value>
+          <value>vizag</value>
+          <value>alleppy</value>
+       </list>
+     </property>
+   </bean>  
+   
+   <bean id="agent"  class="com.nt.beans.TravelAgent"  autowire="constructor"/>
+   
+</beans>

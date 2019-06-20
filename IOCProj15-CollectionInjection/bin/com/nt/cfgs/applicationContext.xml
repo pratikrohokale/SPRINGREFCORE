@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="dt1"  class="java.util.Date"/>
+
+<bean id="dt2"  class="java.util.Date">
+    <property name="year"  value="113"/>
+    <property name="month"  value="10"/>
+    <property name="date"  value="20"/>
+</bean>
+
+ <bean id="per"  class="com.nt.beans.Person">
+    <property name="hobies">
+      <list>
+         <value>Travelling</value>
+         <value>Watching TV</value>
+         <value>Stamp Collection</value>
+      </list>
+    </property>
+    <property name="dates">
+       <list>
+          <ref bean="dt1"/>
+          <ref bean="dt2"/>
+       </list>
+    </property>
+ </bean>
+ 
+ 
+  <bean id="clg"   class="com.nt.beans.College">
+     <property name="studNames">
+       <list>
+          <value>srinivas</value>
+          <value>venkatesh</value>
+          <value>srinivas</value>
+       </list>
+     </property>
+     <property name="listData">
+       <list>
+         <value>laxmi</value>
+         <ref bean="dt1"/>
+         <ref bean="dt2"/>
+       </list>
+     </property>
+  </bean>
+  
+  <bean id="faculty"  class="com.nt.beans.Faculty">
+     <property name="phones">
+      <set>
+      <value>7898989878</value>
+        <value>9898989898</value>
+        <value>9898989898</value>
+        
+        </set>
+     </property>
+  </bean>
+  
+  <bean id="uni"  class="com.nt.beans.University">
+    <property name="facultySubjects">
+      <map>
+       <entry key="raja" value="java"/>
+       <entry>
+          <key><value>rajesh</value></key>
+          <value>.net</value>
+       </entry>
+       <entry key="rani">
+         <value>php</value>
+       </entry>
+      </map>
+    </property>
+    <property name="meetingDates">
+       <map>
+         <entry key="boardmeeting"   value-ref="dt1"/>
+         <entry>
+           <key><value>traders meeting</value></key>
+           <ref bean="dt2"/>
+         </entry>
+       </map>
+    </property>
+    <property name="mapData">
+        <map>
+           <entry key-ref="dt1"   value-ref="dt2"/>
+           <entry key="raja"  value="manager"/>
+           <entry key="today"  value-ref="dt1"/>
+        </map>
+    </property>
+  </bean>
+  <bean id="empDetails"  class="com.nt.beans.EmployeeDetails">
+     <property name="empDesgs">
+        <props>
+           <prop key="raja">manager</prop>
+           <prop key="rani">HR</prop>
+           <prop key="ramesh">clerk</prop>
+        </props>
+     </property>
+  </bean>
+
+
+</beans>

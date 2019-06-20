@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+   <!--  Problem.... 
+   <bean id="bat1"  class="com.nt.beans.Bat">
+      <property name="id"  value="1001"/>
+      <property name="make"  value="MRF"/>
+   </bean>
+   
+   <bean id="dhoni"  class="com.nt.beans.Batsman">
+      <property name="bat"  ref="bat1"/>
+      <property name="team"  value="india"/>
+   </bean>
+   
+     <bean id="virat"  class="com.nt.beans.Batsman">
+      <property name="bat"  ref="bat1"/>
+      <property name="team"  value="india"/>
+   </bean>    -->
+   
+   <bean id="dhoni"  class="com.nt.beans.Batsman">
+      <property name="team"  value="india"/>
+        <property name="bat">
+            <!-- InnerBean -->
+             <bean  class="com.nt.beans.Bat">
+                  <property name="id"  value="1001"/>
+                  <property name="make"  value="MRF"/>
+             </bean>
+        </property>
+   </bean>
+   
+     <bean id="virat"  class="com.nt.beans.Batsman">
+      <property name="team"  value="india"/>
+        <property name="bat">
+            <!-- InnerBean -->
+             <bean  class="com.nt.beans.Bat">
+                  <property name="id"  value="1002"/>
+                  <property name="make"  value="Boost"/>
+             </bean>
+        </property>
+   </bean>
+      
+      
+
+</beans>

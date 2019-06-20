@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+ <!-- Depedent bean configuration -->
+   <bean id="dt"  class="java.util.Date"/>
+   
+   <bean id="dt1"  class="java.util.Date">
+      <property name="year"  value="114"/>
+   </bean>
+   
+   <!-- Main /Target bean configuration -->
+   <bean   class="com.nt.beans.WishGenerator">
+         <property name="date1"  ref="dt"/>
+   </bean>
+   
+     <bean   class="com.nt.beans.WishGenerator">
+       <property name="date1"  ref="dt1"/>
+     </bean>
+     
+
+
+
+</beans>
