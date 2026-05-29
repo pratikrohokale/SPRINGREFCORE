@@ -2,6 +2,7 @@ package com.nt.test;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 
@@ -14,7 +15,7 @@ public class ConstructorInjectTest {
 		BeanFactory factory=null;
 		WishGenerator wish=null;
 		//Locate SpringBean cfg file
-		res=new FileSystemResource("src/com/nt/cfgs/applicationContext.xml");
+		res=new ClassPathResource("com/nt/cfgs/applicationContext.xml");
 		//create IOC container
 		factory=new XmlBeanFactory(res);
 		//get BEan (main)
