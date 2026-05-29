@@ -1,0 +1,143 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>nit</groupId>
+  <artifactId>SPRINGREFCORE</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>SPRINGREFCORE Parent Project</name>
+  <description>Aggregator parent for Spring reference core examples</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <spring.version>4.3.9.RELEASE</spring.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context-support</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.2</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.inject</groupId>
+        <artifactId>javax.inject</artifactId>
+        <version>1</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>3.8.1</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>IOCBootProj1</module>
+    <module>IOCBootProj2-StrategyPattern</module>
+    <module>IOCBootProj3-LayeredApplication</module>
+    <module>IOCProj1-SetterInjectionBasics</module>
+    <module>IOCProj10-CyclicDependency-UsingConstructorInjection-Problem</module>
+    <module>IOCProj100p61-DependencyInjection+LooseCoupling3</module>
+    <module>IOCProj100p62-LayeredApp-NestedBeanFactory-Properties file</module>
+    <module>IOCProj100p64-BeanLifecycle</module>
+    <module>IOCProj100p65-MethodReplacer</module>
+    <module>IOCProj100p66-LookupMethiodInjection</module>
+    <module>IOCProj100p67ServiceLocatorWeb-FactoryBean</module>
+    <module>IOCProj100p68ServiceLocatorWeb-FactoryMethod</module>
+    <module>IOCProj100pWishApp60</module>
+    <module>IOCProj11-CyclicDependency-UsingConstructorInjection+setter Injection</module>
+    <module>IOCProj12-StrategyPattern-CoreJava</module>
+    <module>IOCProj13-StrategyPattern-SpringCore</module>
+    <module>IOCProj14(Layered App-Realtime DI)</module>
+    <module>IOCProj15-CollectionInjection</module>
+    <module>IOCProj16-NullInjection</module>
+    <module>IOCProj17-Default Bean ids</module>
+    <module>IOCProj18(InnerBean)</module>
+    <module>IOCProj19(BeanInheritence)</module>
+    <module>IOCProj2-ConstructorInjectionBasics</module>
+    <module>IOCProj20-CollectionMerging</module>
+    <module>IOCProj21-Bean Alias</module>
+    <module>IOCProj22-DependencyLookup</module>
+    <module>IOCProj23-Factory Methods Bean Instantiation</module>
+    <module>IOCProj24-Dependency-check</module>
+    <module>IOCProj25-Bean Scopes</module>
+    <module>IOCProj26-Autowiring</module>
+    <module>IOCProj27-LayeredApp-NestedBeanFactory</module>
+    <module>IOCProj28-PandCNameSpace</module>
+    <module>IOCProj29-ApplicationContextBasics</module>
+    <module>IOCProj3-DependencyInjection+TightCoupling</module>
+    <module>IOCProj30-AC-PreInstantiation</module>
+    <module>IOCProj31-LayeredApp-NestedBeanFactory-Properties file</module>
+    <module>IOCProj32-I18n-CoreJava</module>
+    <module>IOCProj33-I18nSpring</module>
+    <module>IOCProj34(AC-EventHandling)</module>
+    <module>IOCProj35-BeanLife Cycle-Declarative</module>
+    <module>IOCProj36-BeanLife Cycle-Programatic</module>
+    <module>IOCProj37-AwareInjection</module>
+    <module>IOCProj38-LookupMethodInjecton -Problem</module>
+    <module>IOCProj39-LookupMethodInjecton -Solution1UsingTradionalDL</module>
+    <module>IOCProj4-DependencyInjection+LooseCoupling2</module>
+    <module>IOCProj40-LookupMethodInjecton -Solution2UsingDL+AWareInjection</module>
+    <module>IOCProj41-LookupMethodInjecton -FinalSolution</module>
+    <module>IOCProj42-MavenLMInjection</module>
+    <module>IOCProj43-MethodReplacer-Injection</module>
+    <module>IOCProj44-Bpp</module>
+    <module>IOCProj45-BeanLifeCycle-POC</module>
+    <module>IOCProj46-FactoryBean-POC</module>
+    <module>IOCProj47ServiceLocatorWeb-FactoryBean</module>
+    <module>IOCProj48ServiceLocatorWeb-FactoryMethod</module>
+    <module>IOCProj49-Built-inPropertyEditors</module>
+    <module>IOCProj5-ConstructorInjection</module>
+    <module>IOCProj50-Custom-inPropertyEditors2</module>
+    <module>IOCProj54(Layered App-Realtime DI-XM+Annotations)</module>
+    <module>IOCProj6-ConstructorInjection-Resolving param Using Type</module>
+    <module>IOCProj7-ConstructorInjection-Resolving param Using index</module>
+    <module>IOCProj8-ConstructorInjection-Resolving params using name</module>
+    <module>IOCProj9-CyclicDependency-UsingSetterinjection</module>
+    <module>IOCProjAnno51-RequiredAnnotation</module>
+    <module>IOCProjAnno52-Autowired</module>
+    <module>IOCProjAnno53-Component</module>
+    <module>IOCProjAnno55-Inject</module>
+    <module>IOCProjAnno56-Named</module>
+    <module>IOCProjAnno57-Resource</module>
+    <module>IOCProjAnno58-AnnoBeanLifecycle</module>
+    <module>IOCProjAnno59-propertiesfile</module>
+  </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+          <configuration>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
